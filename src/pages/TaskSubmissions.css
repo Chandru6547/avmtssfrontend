@@ -1,0 +1,135 @@
+.task-table-page {
+  padding: 30px;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  min-height: 100vh;
+}
+
+.task-table-page h2 {
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.subtitle {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* FILTER BAR */
+.filter-bar {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.filter-bar input,
+.filter-bar select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+/* TABLE */
+.table-wrapper {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  overflow: auto;
+  max-height: 70vh;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.submission-table th {
+  position: sticky;
+  top: 0;
+  background: #f9fafb;
+  text-align: left;
+  padding: 14px;
+  font-weight: 800;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.submission-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: top;
+}
+
+.submission-table tr:hover {
+  background: #f8fafc;
+}
+
+/* STATUS */
+.status {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status.assigned {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.status.started {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+/* BREACH */
+.breach.yes {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.breach.no {
+  color: #16a34a;
+  font-weight: 800;
+}
+
+/* PROOF */
+.proof-mini {
+  display: flex;
+  gap: 6px;
+}
+
+.proof-mini img {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease;
+}
+
+.proof-mini img:hover {
+  transform: scale(1.15);
+}
+
+/* EMPTY */
+.empty {
+  text-align: center;
+  padding: 30px;
+  color: #6b7280;
+}
+
+/* LOADING */
+.loading {
+  text-align: center;
+  margin-top: 80px;
+  font-size: 16px;
+  color: #6b7280;
+}

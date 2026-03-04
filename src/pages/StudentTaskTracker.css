@@ -1,0 +1,463 @@
+.student-task-page {
+  padding: 36px;
+  background: linear-gradient(180deg, #f8fafc, #eef2ff);
+  min-height: 100vh;
+}
+
+.student-header {
+  margin-bottom: 22px;
+}
+
+.student-header h2 {
+  font-size: 30px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.student-header p {
+  margin-top: 6px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.search-wrap input {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #e6edf8;
+  width: 420px;
+  box-shadow: 0 6px 18px rgba(99,102,241,0.06);
+}
+
+.controls-right {
+  margin-left: auto;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.filter-chips .chip {
+  background: #eef2ff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filter-chips .chip.active {
+  background: #6366f1;
+  color: white;
+  box-shadow: 0 8px 24px rgba(99,102,241,0.18);
+}
+
+/* TABLE */
+.task-table-wrapper {
+  margin-top: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+.meta-row {
+  margin-top: 8px;
+  color: #475569;
+  font-size: 13px;
+}
+
+.task-sub {
+  margin-top: 6px;
+  color: #6b7280;
+  font-size: 13px;
+}
+
+.task-progress {
+  margin-top: 10px;
+}
+
+.progress-wrap {
+  background: #eef2ff;
+  height: 10px;
+  border-radius: 999px;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg,#34d399,#10b981);
+  transition: width 0.4s ease;
+}
+
+.progress-wrap small {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: #475569;
+}
+
+.progress-wrap small.overdue {
+  color: #dc2626;
+  font-weight: 800;
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th,
+.task-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+  font-size: 14px;
+}
+
+.task-table th {
+  background: #f3f4f6;
+  font-weight: 700;
+  text-align: left;
+}
+
+.task-table td.title {
+  font-weight: 700;
+}
+
+/* STATUS */
+.status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.status.overdue {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* ACTION BUTTONS */
+.action-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn.view {
+  background: #eef2ff;
+  color: #2563eb;
+}
+
+.btn.start {
+  background: #22c55e;
+  color: white;
+}
+
+.btn.submit {
+  width: 100%;
+  background: #16a34a;
+  color: white;
+}
+
+/* MODAL */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 480px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.modal-header,
+.modal-footer {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modal-footer {
+  border-top: 1px solid #e5e7eb;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+/* UPLOAD */
+.upload-box {
+  margin-top: 16px;
+  border: 2px dashed #c7d2fe;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-box input {
+  display: none;
+}
+
+.preview-grid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+}
+
+.preview-grid img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* LOADING */
+.loading {
+  margin-top: 80px;
+  text-align: center;
+  color: #6b7280;
+}
+.status.notstarted {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.status.inprogress {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.btn.complete {
+  background: #f59e0b;
+  color: white;
+}
+
+.btn.done {
+  background: #16a34a;
+  color: white;
+  cursor: not-allowed;
+}
+.btn.view {
+  background: #eef2ff;
+  color: #2563eb;
+}
+
+/* Sticky header */
+.task-table thead th {
+  position: sticky;
+  top: 0;
+  background: #f9fafb;
+  z-index: 2;
+}
+
+.task-table tbody tr {
+  transition: all 0.25s ease;
+  cursor: pointer;
+}
+
+.task-table tbody tr:hover {
+  background: #f3f4f6;
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Status glow */
+.status.completed {
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+}
+
+.status.inprogress {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+}
+
+/* Buttons */
+.action-buttons .btn {
+  transition: transform 0.15s ease;
+}
+
+.action-buttons .btn:hover {
+  transform: translateY(-1px);
+}
+
+/* Lightbox Effect */
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-image {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal {
+  animation: popIn 0.35s ease;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.92) translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+.modal-backdrop {
+  backdrop-filter: blur(6px);
+}
+.upload-box {
+  transition: all 0.25s ease;
+  background: #f8fafc;
+}
+
+.upload-box:hover {
+  background: #eef2ff;
+  border-color: #6366f1;
+}
+
+/* Add Task Button */
+.add-task-wrapper {
+  margin-bottom: 16px;
+  text-align: right;
+}
+
+.btn.add-task {
+  background: #3b82f6;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn.add-task:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+/* Modal Input */
+.modal-body input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.modal-body input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* Enhanced Animations */
+
+/* Modal Animation */
+.modal {
+  animation: slideIn 0.4s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Button Hover Animation */
+.btn {
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Table Row Hover Animation */
+.task-table tbody tr {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.task-table tbody tr:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Add Task Button Animation */
+.btn.add-task {
+  transition: all 0.3s ease;
+}
+
+.btn.add-task:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.3);
+}

@@ -1,0 +1,90 @@
+/* Reuse base course styles */
+@import "./CourseListPage.css";
+
+/* ---------- GRID ---------- */
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ---------- MCQ META ---------- */
+.mcq-meta {
+  font-size: 13px;
+  color: #6b7280;
+  margin: 6px 0 12px;
+}
+
+/* ---------- COMPLETED BADGE ---------- */
+.completed-badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: #2ecc71;
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+/* ---------- BUTTON ---------- */
+.course-btn:disabled {
+  background: #bdbdbd;
+  cursor: not-allowed;
+}
+
+/* ---------- GHOST CARD ---------- */
+.ghost-card {
+  visibility: hidden; /* occupies space but invisible */
+}
+
+/* ---------- SEARCH BAR ---------- */
+.search-bar {
+  margin-top: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-bar input {
+  padding: 10px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* ---------- PROGRESS BAR ---------- */
+.progress-bar-container {
+  background: #e5e7eb;
+  height: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #34d399, #10b981);
+  transition: width 0.4s ease;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+}

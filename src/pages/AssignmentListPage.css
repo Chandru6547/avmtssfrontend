@@ -1,0 +1,169 @@
+/* ---------- PAGE ---------- */
+.assignment-list-page {
+  padding: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADER ---------- */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.page-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+/* ---------- BUTTONS ---------- */
+.primary-btn-create-assignment {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+.outline-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.outline-btn:hover {
+  background: #f8fafc;
+}
+
+/* ---------- GRID ---------- */
+.assignment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* ---------- CARD ---------- */
+.assignment-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.assignment-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+}
+
+/* ---------- CARD TOP ---------- */
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 10px;
+}
+
+.card-top h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  line-height: 1.3;
+}
+
+/* ---------- STATUS ---------- */
+.status {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.status.active {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.status.overdue {
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+/* ---------- CARD INFO ---------- */
+.card-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 18px 0;
+}
+
+.card-info label {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+  margin-bottom: 2px;
+}
+
+.card-info span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #0f172a;
+}
+
+/* ---------- ACTIONS ---------- */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* ---------- EMPTY ---------- */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  border: 2px dashed #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 20px;
+}
+
+/* ---------- LOADER ---------- */
+.page-loader {
+  padding: 80px;
+  text-align: center;
+  font-size: 14px;
+  color: #64748b;
+}

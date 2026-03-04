@@ -1,0 +1,262 @@
+.assignment-report-page {
+  min-height: 100vh;
+  padding: 40px;
+  background: linear-gradient(180deg, #eef2ff, #f8fafc);
+}
+
+/* ================= HEADER ================= */
+.report-header {
+  margin-bottom: 30px;
+}
+
+.report-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.report-header p {
+  margin-top: 6px;
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* ================= STATES ================= */
+.loading,
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  font-size: 16px;
+  color: #475569;
+}
+
+/* ================= SUMMARY CARDS ================= */
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.summary-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+.summary-card h4 {
+  font-size: 14px;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.summary-card p {
+  font-size: 28px;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.summary-card.success {
+  background: #ecfdf5;
+}
+
+.summary-card.warning {
+  background: #fff7ed;
+}
+
+.summary-card.info {
+  background: #eef2ff;
+}
+
+/* ================= FILTER BAR ================= */
+.filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+/* LEFT SIDE (Batch) */
+.filter-left select {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 14px;
+  outline: none;
+  min-width: 140px;
+}
+
+/* RIGHT SIDE (Search + Download) */
+.filter-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.filter-right input {
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 14px;
+  outline: none;
+  min-width: 220px;
+}
+
+.filter-right button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.filter-right button:hover {
+  background: #4338ca;
+}
+
+/* ================= ANALYSIS TOGGLE ================= */
+.analysis-toggle {
+  text-align: right;
+  margin-bottom: 16px;
+}
+
+.analysis-toggle button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #0f172a;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.analysis-toggle button:hover {
+  background: #020617;
+}
+
+/* ================= ANALYSIS CARD ================= */
+.analysis-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.07);
+}
+
+.analysis-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.analysis-card p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.chart-wrapper {
+  max-width: 420px;
+  margin: 20px auto 0;
+}
+
+/* ================= TABLE ================= */
+.table-wrapper {
+  max-height: 65vh;
+  overflow-y: auto;
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.report-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.report-table thead {
+  background: #4f46e5;
+}
+
+.report-table th {
+  text-align: left;
+  padding: 14px 16px;
+  color: #000000;
+  font-weight: 600;
+  font-size: 14px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.report-table td {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.report-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.report-table tbody tr:hover {
+  background: #eef2ff;
+}
+
+/* ================= STATUS ================= */
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.pending {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ================= SCORE ================= */
+.score {
+  background: #dbeafe;
+  color: #1d4ed8;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* ================= MISC ================= */
+.mono {
+  font-family: monospace;
+  font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .filter-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .filter-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .analysis-toggle {
+    text-align: left;
+  }
+}

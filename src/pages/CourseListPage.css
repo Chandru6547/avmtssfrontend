@@ -1,0 +1,319 @@
+/* ================================================= */
+/* ---------- PAGE WRAPPER ---------- */
+/* ================================================= */
+.course-page {
+  padding: 40px;
+  margin-left: 80px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f7f9fc, #eef2f7);
+
+  /* IMPORTANT: limit width so cards never stretch */
+  max-width: 1200px;
+}
+
+/* ================================================= */
+/* ---------- HEADER ---------- */
+/* ================================================= */
+.course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.course-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.course-header p {
+  color: #6b7280;
+  margin-top: 6px;
+}
+
+/* ================================================= */
+/* ---------- ADD COURSE BUTTON ---------- */
+/* ================================================= */
+.add-course-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ================================================= */
+/* 🔥 CORE FIX: ALWAYS 3-COLUMN GRID */
+/* ================================================= */
+.course-grid {
+  display: grid;
+
+  /* FORCE 3 columns on desktop */
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+/* ================================================= */
+/* ---------- COURSE CARD ---------- */
+/* ================================================= */
+.course-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+
+  /* Prevent card from collapsing or stretching */
+  min-height: 180px;
+}
+
+.course-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.course-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+.course-desc {
+  font-size: 14px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* ================================================= */
+/* ---------- BUTTON ---------- */
+/* ================================================= */
+.course-btn {
+  margin-top: auto; /* stick button to bottom */
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: center;
+}
+
+.course-btn:hover {
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* ================================================= */
+/* ---------- LOADER ---------- */
+/* ================================================= */
+.course-loader {
+  height: 100vh;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #f7f9fc, #eef2f7);
+}
+
+/* ---------- HUMAN LOADER ---------- */
+.human-loader {
+  position: relative;
+  width: 60px;
+  height: 120px;
+}
+
+.head {
+  width: 22px;
+  height: 22px;
+  background: #6366f1;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.body {
+  width: 6px;
+  height: 40px;
+  background: #374151;
+  margin: 4px auto 0;
+}
+
+.arm {
+  position: absolute;
+  top: 34px;
+  width: 26px;
+  height: 4px;
+  background: #374151;
+}
+
+.left-arm {
+  left: 30px;
+  animation: armSwing 1s infinite;
+}
+
+.right-arm {
+  left: 30px;
+  animation: armSwingReverse 1s infinite;
+}
+
+.leg {
+  position: absolute;
+  top: 78px;
+  width: 6px;
+  height: 32px;
+  background: #374151;
+}
+
+.left-leg {
+  left: 26px;
+  animation: legMove 1s infinite;
+}
+
+.right-leg {
+  left: 34px;
+  animation: legMoveReverse 1s infinite;
+}
+
+/* ---------- LOADER TEXT ---------- */
+.loader-text {
+  margin-top: 20px;
+  color: #374151;
+}
+
+.dots i {
+  opacity: 0;
+  animation: dots 1.4s infinite;
+}
+
+.dots i:nth-child(1) { animation-delay: 0s; }
+.dots i:nth-child(2) { animation-delay: 0.3s; }
+.dots i:nth-child(3) { animation-delay: 0.6s; }
+
+/* ================================================= */
+/* ---------- ANIMATIONS ---------- */
+/* ================================================= */
+@keyframes armSwing {
+  0%,100% { transform: rotate(20deg); }
+  50% { transform: rotate(-20deg); }
+}
+
+@keyframes armSwingReverse {
+  0%,100% { transform: rotate(-20deg); }
+  50% { transform: rotate(20deg); }
+}
+
+@keyframes legMove {
+  0%,100% { transform: rotate(15deg); }
+  50% { transform: rotate(-15deg); }
+}
+
+@keyframes legMoveReverse {
+  0%,100% { transform: rotate(-15deg); }
+  50% { transform: rotate(15deg); }
+}
+
+@keyframes dots {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* ================================================= */
+/* ---------- RESPONSIVE ---------- */
+/* ================================================= */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .course-page {
+    margin-left: 0;
+    padding: 30px 24px;
+  }
+
+  .course-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .course-loader {
+    margin-left: 0;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .course-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .course-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .course-btn {
+    width: 100%;
+  }
+}
+
+/* ================================================= */
+/* ---------- GHOST PLACEHOLDER CARDS ---------- */
+/* ================================================= */
+
+.ghost-card {
+  background: transparent;
+  border: 2px dashed transparent;
+  box-shadow: none;
+  cursor: default;
+}
+
+.ghost-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Skeleton elements */
+.ghost-title {
+  height: 20px;
+  width: 70%;
+  background: #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 14px;
+}
+
+.ghost-line {
+  height: 14px;
+  width: 90%;
+  background: #e5e7eb;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.ghost-button {
+  height: 40px;
+  width: 100%;
+  background: #e5e7eb;
+  border-radius: 10px;
+}
+
+/* Subtle shimmer animation */
+.ghost-title,
+.ghost-line,
+.ghost-button {
+  animation: ghostPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes ghostPulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}

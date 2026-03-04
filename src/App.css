@@ -1,0 +1,27 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* APP LAYOUT */
+.app-layout {
+  display: flex;
+}
+
+.main-content {
+  margin-left: 56px; /* match navbar collapsed width */
+  width: calc(100% - 56px);
+  min-height: 100vh;
+  padding: 20px;
+  background: #f8fafc;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+  overflow-y: auto;
+}
+
+/* When navbar expands */
+.navbar:hover ~ .main-content {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+}

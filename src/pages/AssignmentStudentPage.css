@@ -1,0 +1,201 @@
+/* ---------- PAGE ---------- */
+.course-page {
+  padding: 40px 50px;
+  min-height: 100vh;
+  background: #ffffff;
+  font-family: Inter, system-ui;
+}
+
+/* ---------- HEADER ---------- */
+.course-header {
+  margin-bottom: 32px;
+}
+
+.course-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.course-header p {
+  margin-top: 6px;
+  font-size: 15px;
+  color: #64748b;
+}
+
+/* ---------- GRID (FIXED 3) ---------- */
+.course-grid.fixed-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* ---------- CARD ---------- */
+.course-card {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 24px;
+  min-height: 200px;
+  border: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.course-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 8px;
+  padding-right: 80px;
+}
+
+.mcq-meta {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 22px;
+}
+
+/* ---------- COMPLETED BADGE ---------- */
+.completed-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #dcfce7;
+  color: #166534;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid #86efac;
+}
+
+/* ---------- BUTTON ---------- */
+.course-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #2563eb;
+  cursor: pointer;
+  font-weight: 600;
+  background: #2563eb;
+  color: #ffffff;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.course-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.course-btn:disabled {
+  background: #e5e7eb;
+  border-color: #e5e7eb;
+  color: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ---------- GHOST CARD ---------- */
+.course-card.ghost {
+  background: #f9fafb;
+  border: 2px dashed #e5e7eb;
+  box-shadow: none;
+  cursor: default;
+}
+
+.course-card.ghost:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ---------- GHOST CONTENT ---------- */
+.ghost-line {
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 25%,
+    #f3f4f6 37%,
+    #e5e7eb 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: 6px;
+}
+
+.ghost-line.title {
+  height: 20px;
+  width: 70%;
+  margin-bottom: 16px;
+}
+
+.ghost-line.text {
+  height: 14px;
+  width: 50%;
+}
+
+.ghost-btn {
+  height: 42px;
+  width: 100%;
+  margin-top: 30px;
+  border-radius: 8px;
+  background: #e5e7eb;
+}
+
+/* ---------- SHIMMER ---------- */
+@keyframes shimmer {
+  0% {
+    background-position: -400px 0;
+  }
+  100% {
+    background-position: 400px 0;
+  }
+}
+
+/* ---------- EMPTY STATE ---------- */
+.empty-state {
+  background: #ffffff;
+  padding: 60px;
+  border-radius: 12px;
+  text-align: center;
+  color: #64748b;
+  border: 1px dashed #cbd5f5;
+}
+
+/* ---------- LOADER ---------- */
+.course-loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  font-size: 16px;
+  color: #64748b;
+}
+/* Expired Badge */
+.expired-badge {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #ffe5e5;
+  color: #d32f2f;
+  border-radius: 20px;
+}
+
+/* Slight red border for expired cards */
+.expired-card {
+  border: 1px solid #ffcccc;
+}
+
+/* Disabled Button Style */
+.course-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

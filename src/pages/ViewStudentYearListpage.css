@@ -1,0 +1,29 @@
+.year-page {
+  padding: 30px;
+}
+
+.year-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.year-card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease;
+}
+
+.year-card:hover {
+  transform: translateY(-4px);
+}
+.year-card h3 {
+  font-size: 18px;
+  color: #111827;
+}

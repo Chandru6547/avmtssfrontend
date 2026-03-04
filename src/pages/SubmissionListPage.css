@@ -1,0 +1,214 @@
+/* PAGE */
+.submission-page {
+  padding: 30px;
+  background: #f7f8fc;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.submission-header h2 {
+  margin: 0;
+  font-size: 22px;
+}
+
+.meta {
+  margin-top: 6px;
+  color: #666;
+  display: flex;
+  gap: 12px;
+}
+
+/* TABLE */
+.submission-table-wrapper {
+  margin-top: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.submission-table th,
+.submission-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.submission-table th {
+  background: #f1f3f6;
+  font-weight: 600;
+  text-align: left;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.clickable-row:hover {
+  background: #f5f7fb;
+}
+
+.student-name-cell {
+  font-weight: 600;
+}
+
+.student-email-cell {
+  color: #666;
+  font-size: 13px;
+}
+
+/* SOLVED BADGE */
+.solved-badge {
+  background: #e6f7ed;
+  color: #0f9d58;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: #fff;
+  width: 520px;
+  max-height: 70vh;
+  border-radius: 14px;
+  overflow: hidden;
+  animation: scaleIn 0.15s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.96);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h3 {
+  margin: 0;
+}
+
+.modal-header p {
+  margin: 4px 0 0;
+  color: #666;
+  font-size: 13px;
+}
+
+.close-btn {
+  border: none;
+  background: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding: 16px 20px;
+  overflow-y: auto;
+}
+
+.modal-body h4 {
+  margin-top: 0;
+}
+
+/* QUESTION LIST */
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.question-list li {
+  display: flex;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.q-index {
+  font-weight: 600;
+  color: #888;
+}
+
+.q-title {
+  flex: 1;
+}
+
+/* STATUS */
+.status {
+  padding: 20px;
+  font-size: 14px;
+}
+
+.status.error {
+  color: red;
+}
+
+.clickable-question {
+  cursor: pointer;
+  padding: 8px;
+  display: flex;
+  gap: 10px;
+}
+
+.clickable-question:hover {
+  background: #f5f7fb;
+}
+
+.modal-box.large {
+  width: 70%;
+  max-height: 80vh;
+}
+
+.code-view {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 16px;
+  border-radius: 8px;
+  overflow: auto;
+  font-size: 13px;
+  max-height: 60vh;
+}
+
+.submission-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 🔥 pushes button to right */
+  gap: 16px;
+}
+
+/* Optional: prevent title block from shrinking */
+.submission-header > div:first-child {
+  flex-shrink: 0;
+}
+
+/* Button already defined */
+.mcq-report-btn {
+  margin-left: auto; /* extra safety */
+}

@@ -1,0 +1,525 @@
+/* ---------- BASE ---------- */
+.exam-wrapper {
+  height: 100vh;
+  background: linear-gradient(120deg, #f9fafb, #eef2ff);
+  transition: filter 0.3s ease;
+}
+
+.exam-wrapper.blur {
+  filter: blur(6px);
+}
+
+/* ---------- PROGRESS ---------- */
+.progress-bar {
+  height: 6px;
+  background: #e5e7eb;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #22c55e);
+  transition: width 0.4s ease;
+}
+
+/* ---------- TOTAL TIME HEADER ---------- */
+.total-time-header {
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #fef3c7, #fef08a);
+  border-bottom: 2px solid #f59e0b;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #92400e;
+}
+
+.total-time-header strong {
+  color: #dc2626;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+/* ---------- LAYOUT ---------- */
+.exam-container {
+  display: flex;
+  height: calc(100vh - 6px);
+}
+
+/* QUESTION */
+.question-panel {
+  width: 90%;
+  padding: 60px;
+  background: white;
+  border-right: 1px solid #e5e7eb;
+}
+
+.question-count {
+  color: #2563eb;
+  font-weight: 600;
+}
+
+.question-panel h2 {
+  margin-top: 30px;
+  font-size: 28px;
+  line-height: 1.4;
+}
+
+/* OPTIONS */
+.options-panel {
+  width: 50%;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.option-tile {
+  display: flex;
+  gap: 16px;
+  padding: 18px;
+  border-radius: 14px;
+  border: 2px solid #e5e7eb;
+  margin-bottom: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  background: white;
+}
+
+.option-tile:hover {
+  transform: translateY(-2px);
+  border-color: #2563eb;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.option-tile.selected {
+  background: #eef2ff;
+  border-color: #2563eb;
+}
+
+.opt-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #2563eb;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+/* NAV */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nav-buttons button {
+  padding: 12px 24px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.nav-buttons button:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+}
+
+.submit {
+  background: #16a34a;
+  color: white;
+}
+
+/* ---------- ANIMATION ---------- */
+.animate-slide {
+  animation: slideFade 0.4s ease;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateX(-15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ---------- RESULT MODAL ---------- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-modal {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 360px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+.result-modal h2 {
+  margin-bottom: 10px;
+}
+
+.result-modal button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+.exam-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 30px;
+  background: #111827;
+  color: white;
+  font-weight: 600;
+}
+
+.proctor-video {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  width: 160px;
+  height: 120px;
+  border-radius: 8px;
+  border: 2px solid #22c55e;
+  object-fit: cover;
+  z-index: 9999;
+}
+
+
+/* START SCREEN */
+.start-screen {
+  height: 100vh;
+  background: #0f172a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-btn {
+  margin-top: 20px;
+  padding: 14px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 8px;
+  background: #22c55e;
+  cursor: pointer;
+}
+
+/* EXAM */
+.exam-wrapper {
+  min-height: 100vh;
+  background: #f8fafc;
+}
+
+.blur {
+  filter: blur(6px);
+}
+
+.progress-bar {
+  height: 6px !important;
+  background: #e5e7eb;
+}
+
+.progress-bar div {
+  height: 100%;
+  background: #3b82f6;
+  transition: width 0.3s;
+}
+
+.exam-container {
+  display: flex;
+  padding: 30px;
+  gap: 30px;
+}
+
+.question-panel {
+  flex: 1;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+}
+
+.options-panel {
+  flex: 1;
+}
+
+.option-tile {
+  background: white;
+  padding: 18px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 2px solid transparent;
+}
+
+.option-tile:hover {
+  border-color: #3b82f6;
+}
+
+.option-tile.selected {
+  border-color: #22c55e;
+  background: #ecfdf5;
+}
+
+.opt-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.nav-buttons button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.submit {
+  background: #22c55e;
+  color: white;
+}
+
+/* RESULT MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-modal {
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  text-align: center;
+}
+
+.camera-preview {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 180px;
+  height: 120px;
+  border-radius: 8px;
+  border: 2px solid #00ff88;
+  background: black;
+  z-index: 9999;
+}
+
+
+
+/* ---------- TOTAL TIME (TOP RIGHT) ---------- */
+.total-time-top-right {
+  position: fixed;
+  top: 14px;
+  right: 20px;
+  z-index: 10000;
+  margin-top: 20px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #fef3c7, #fde68a);
+  border: 2px solid #f59e0b;
+  font-size: 15px;
+  font-weight: 700;
+  color: #92400e;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  /* Wrapper */
+  .exam-wrapper {
+    padding-top: 70px; /* space for timer */
+  }
+
+  /* TIMER – STAYS AT TOP */
+  .total-time-top-right {
+    top: 10px;
+    right: 50%;
+    transform: translateX(50%);
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  /* LAYOUT STACK */
+  .exam-container {
+    flex-direction: column;
+    padding: 16px;
+    gap: 16px;
+  }
+
+  /* QUESTION ON TOP */
+  .question-panel {
+    width: 100%;
+    padding: 20px;
+    border-radius: 12px;
+  }
+
+  .question-panel h2 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+
+  /* OPTIONS BELOW QUESTION */
+  .options-panel {
+    width: 100%;
+    padding: 0;
+  }
+
+  .option-tile {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .opt-circle {
+    width: 32px;
+    height: 32px;
+    font-size: 14px;
+  }
+
+  /* NAV BUTTONS */
+  .nav-buttons {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .nav-buttons button {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  /* RESULT MODAL */
+  .result-modal {
+    width: 90%;
+    padding: 24px;
+  }
+
+  /* START SCREEN */
+  .start-screen h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .rules {
+    font-size: 14px;
+  }
+
+  .start-btn {
+    width: 90%;
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+/* ================= MOBILE SPACE REDUCTION ================= */
+@media (max-width: 480px) {
+
+  /* Overall page padding */
+  .exam-container {
+    padding: 10px;
+    gap: 10px;
+  }
+
+  /* Question card */
+  .question-panel {
+    padding: 14px;
+    margin-bottom: 8px;
+  }
+
+  .question-panel h2 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-top: 0;
+  }
+
+  /* Timer */
+  .total-time-top-right {
+    padding: 6px 14px;
+    font-size: 13px;
+    margin-top: 0;
+  }
+
+  /* Options panel */
+  .options-panel {
+    padding: 0;
+  }
+
+  .option-tile {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .opt-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 13px;
+  }
+
+  /* Option text */
+  .option-tile span:last-child {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  /* Navigation buttons */
+  .nav-buttons {
+    margin-top: 12px;
+    gap: 10px;
+  }
+
+  .nav-buttons button {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 8px;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 0px !important;
+    max-height: 0% !important;
+    
+  }
+
+  /* Remove unnecessary height stretching */
+  .exam-wrapper {
+    min-height: auto;
+  }
+}

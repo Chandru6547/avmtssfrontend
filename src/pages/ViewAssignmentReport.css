@@ -1,0 +1,134 @@
+/* ---------- MAIN CONTAINER ---------- */
+.student-container {
+  max-width: 560px;
+  margin: 40px auto;
+  padding: 30px 34px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.12);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ---------- TITLE ---------- */
+.student-container h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 22px;
+  color: #111827;
+}
+
+/* ---------- FORM LAYOUT ---------- */
+.student-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ---------- SELECT ---------- */
+.student-form select {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background-color: #ffffff;
+  color: #111827;
+  cursor: pointer;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ---------- DISABLED ---------- */
+.student-form select:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+/* ---------- FOCUS ---------- */
+.student-form select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+/* ---------- BUTTON ---------- */
+.student-form button {
+  margin-top: 10px;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  transition: all 0.15s ease;
+}
+
+.student-form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(79, 70, 229, 0.35);
+}
+
+.student-form button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ---------- BATCH CHECKBOX SECTION ---------- */
+.batch-checkbox-group {
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  padding: 12px 14px;
+  background: #f9fafb;
+}
+
+/* Label */
+.batch-checkbox-group .label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 10px;
+}
+
+/* Checkbox row */
+.batch-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 2px;
+  font-size: 14px;
+  color: #1f2937;
+  cursor: pointer;
+}
+
+/* Checkbox input */
+.batch-checkbox input {
+  width: 16px;
+  height: 16px;
+  accent-color: #6366f1;
+  cursor: pointer;
+}
+
+/* Hover effect */
+.batch-checkbox:hover {
+  color: #4f46e5;
+}
+
+/* ---------- STATUS MESSAGE ---------- */
+.message {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  color: #065f46;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 600px) {
+  .student-container {
+    margin: 20px;
+    padding: 24px;
+  }
+}

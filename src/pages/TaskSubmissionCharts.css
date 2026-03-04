@@ -1,0 +1,44 @@
+/* ================= CHARTS ROW ================= */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+/* CARD */
+.chart-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 16px 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  height: 360px; /* 🔥 CONTROL CARD HEIGHT */
+  display: flex;
+  flex-direction: column;
+}
+
+/* TITLE */
+.chart-title {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+/* CHART AREA */
+.chart-wrapper {
+  flex: 1;              /* fills remaining space */
+  position: relative;  /* required by Chart.js */
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  .chart-card {
+    height: 300px;
+  }
+}

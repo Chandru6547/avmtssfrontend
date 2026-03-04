@@ -1,0 +1,218 @@
+/* ---------- PAGE ---------- */
+.mcq-list-page {
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ---------- HEADER ---------- */
+.page-header h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.page-header p {
+  color: #64748b;
+  margin-top: 4px;
+  margin-bottom: 24px;
+}
+
+/* ---------- FILTER BAR ---------- */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.filter-bar input {
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 200px;
+}
+
+.filter-bar button {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.filter-bar button:hover {
+  background: #1d4ed8;
+}
+
+.filter-bar .reset {
+  background: #6b7280;
+}
+
+.filter-bar .reset:hover {
+  background: #475569;
+}
+
+/* ---------- STATUS ---------- */
+.status-text {
+  text-align: center;
+  color: #64748b;
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+/* ---------- EMPTY ---------- */
+.empty-state {
+  text-align: center;
+  padding: 80px 20px;
+  border: 2px dashed #e5e7eb;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.empty-state h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.empty-state p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ---------- MCQ CARD ---------- */
+.mcq-card {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.mcq-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.mcq-card.expanded {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  transform: scale(1.02);
+}
+
+/* ---------- HEADER ---------- */
+.mcq-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  cursor: pointer;
+}
+
+.mcq-header:hover {
+  background: #eef2ff;
+}
+
+.mcq-meta h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* ---------- TAGS ---------- */
+.tag {
+  background: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.count {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* ---------- ACTIONS ---------- */
+.mcq-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.mcq-actions button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.mcq-actions .view {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.mcq-actions .view:hover {
+  background: #e2e8f0;
+}
+
+.mcq-actions .delete {
+  background: #ef4444;
+  color: white;
+}
+
+.mcq-actions .delete:hover {
+  background: #dc2626;
+}
+
+/* ---------- QUESTIONS ---------- */
+.mcq-questions {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.question-item {
+  display: flex;
+  gap: 8px;
+  padding: 8px 0;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.qno {
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mcq-questions {
+  padding: 16px;
+  background: #ffffff;
+  animation: fadeIn 0.3s ease;
+}

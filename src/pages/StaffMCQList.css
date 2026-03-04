@@ -1,0 +1,114 @@
+.mcq-page {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f0fdf4, #ecfeff);
+  padding: 40px;
+}
+
+.page-header {
+  margin-bottom: 30px;
+}
+
+.page-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #064e3b;
+}
+
+.page-header p {
+  margin-top: 6px;
+  color: #065f46;
+  font-size: 15px;
+}
+
+/* GRID */
+.mcq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.mcq-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.mcq-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* HEADER */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #022c22;
+}
+
+.badge.mcq {
+  background: #10b981;
+  color: #ffffff;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+/* CATEGORY */
+.category {
+  margin: 14px 0;
+  font-size: 14px;
+  color: #065f46;
+}
+
+/* META */
+.meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #134e4a;
+  margin-bottom: 18px;
+}
+
+/* FOOTER */
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status.active {
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 500;
+}
+
+.view-btn {
+  border: none;
+  background: #059669;
+  color: #ffffff;
+  padding: 8px 14px;
+  font-size: 13px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.view-btn:hover {
+  background: #047857;
+}

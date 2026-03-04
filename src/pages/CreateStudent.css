@@ -1,0 +1,137 @@
+/* ---------- PAGE WRAPPER ---------- */
+.student-container {
+  max-width: 520px;
+  margin: 40px auto;
+  padding: 28px 32px;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ---------- HEADINGS ---------- */
+.student-container h2 {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+.student-container h3 {
+  margin-top: 25px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* ---------- FORM ---------- */
+.student-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 12px;
+}
+
+/* ---------- INPUTS & SELECT ---------- */
+.student-form input,
+.student-form select {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.student-form input::placeholder {
+  color: #9ca3af;
+}
+
+/* ---------- FOCUS ---------- */
+.student-form input:focus,
+.student-form select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.15);
+}
+
+/* ---------- SELECT ---------- */
+.student-form select {
+  cursor: pointer;
+}
+
+/* ---------- BUTTON ---------- */
+.student-form button {
+  margin-top: 10px;
+  padding: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.student-form button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(79, 70, 229, 0.35);
+}
+
+.student-form button:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ---------- SEPARATOR ---------- */
+.student-container hr {
+  margin: 28px 0 18px;
+  border: none;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* ---------- FILE UPLOAD ---------- */
+.student-container input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px dashed #9ca3af;
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+.student-container input[type="file"]::-webkit-file-upload-button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+/* ---------- MESSAGE ---------- */
+.message {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.message:has(text) {
+  color: #16a34a;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 520px) {
+  .student-container {
+    margin: 20px;
+    padding: 24px;
+  }
+}

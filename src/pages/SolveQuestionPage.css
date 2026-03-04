@@ -1,0 +1,501 @@
+/* =========================
+   ROOT & LAYOUT
+========================= */
+.compiler-root {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.solve-layout {
+  display: flex;
+  height: 100vh;
+}
+
+/* =========================
+   LEFT PANEL (QUESTION)
+========================= */
+.solve-left {
+  width: 50%;
+  min-width: 520px;
+  border-right: 1px solid #e5e7eb;
+}
+
+.question-panel {
+  padding: 32px;
+  height: 100%;
+  overflow-y: auto;
+  font-size: 15.5px;
+  background: linear-gradient(#ffffff, #f8fafc);
+}
+
+.question-header {
+  background: #ffffff;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 5;
+}
+
+.question-header h1 {
+  font-size: 22px;
+  margin: 0;
+}
+
+.difficulty {
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.difficulty.easy {
+  background: #e6f7ed;
+  color: #15803d;
+}
+
+.difficulty.medium {
+  background: #fff4e5;
+  color: #c2410c;
+}
+
+.difficulty.hard {
+  background: #fdecea;
+  color: #b91c1c;
+}
+
+.question-description {
+  margin-top: 16px;
+  max-width: 720px;
+  line-height: 1.7;
+}
+
+.section-heading {
+  margin-top: 26px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* =========================
+   SAMPLE TESTCASES
+========================= */
+.sample-list {
+  display: grid;
+  gap: 14px;
+}
+
+.sample-card {
+  background: #ffffff;
+  padding: 14px;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+}
+
+.sample-title {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.sample-row pre {
+  background: #f1f5f9;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+/* =========================
+   RIGHT PANEL (EDITOR)
+========================= */
+.solve-right {
+  width: 50%;
+  background: #0f172a;
+}
+
+.editor-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* TOP BAR */
+.editor-top-bar {
+  padding: 12px;
+  background: #020617;
+  border-bottom: 1px solid #1e293b;
+}
+
+/* LANGUAGE DROPDOWN */
+.language-selector {
+  position: relative;
+  display: inline-block;
+}
+
+.language-selector select {
+  appearance: none;
+  background: #020617;
+  color: #e5e7eb;
+  padding: 8px 36px 8px 14px;
+  border-radius: 10px;
+  border: 1px solid #334155;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-selector select:hover {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37,99,235,0.3);
+}
+
+.language-selector select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.35);
+}
+
+.language-selector::after {
+  content: "▾";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+  pointer-events: none;
+}
+
+/* =========================
+   ACTION BAR
+========================= */
+.action-bar {
+  display: flex;
+  gap: 12px;
+  padding: 12px;
+  background: #020617;
+  border-top: 1px solid #1e293b;
+}
+
+.action-bar button {
+  flex: 1;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.action-bar button:not(.submit) {
+  background: #ffffff;
+  color: #020617;
+}
+
+.action-bar .submit {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+}
+
+/* =========================
+   RESULT PANEL (CLEAN UI)
+========================= */
+.result-panel {
+  padding: 20px;
+  background: #f8fafc;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* SUMMARY CARD */
+.result-summary {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+}
+
+/* SUMMARY LEFT */
+.summary-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.summary-verdict {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.summary-verdict.ok {
+  color: #16a34a;
+}
+
+.summary-verdict.fail {
+  color: #dc2626;
+}
+
+.summary-count {
+  font-size: 13px;
+  color: #475569;
+}
+
+/* SUBMIT TAG */
+.summary-tag {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+/* =========================
+   TESTCASE DETAILS (RUN)
+========================= */
+.testcase-list {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.testcase-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+  border-left: 4px solid transparent;
+}
+
+.tc-pass {
+  border-left-color: #16a34a;
+}
+
+.tc-fail {
+  border-left-color: #dc2626;
+}
+
+.tc-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.tc-status {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.tc-row {
+  margin-bottom: 8px;
+}
+
+.tc-row label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #475569;
+}
+
+.tc-row pre {
+  background: #f1f5f9;
+  padding: 8px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 4px;
+}
+
+/* =========================
+   ERROR CARD (CE / RE)
+========================= */
+.error-card {
+  background: #fff1f2;
+  border-left: 5px solid #dc2626;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.05);
+}
+
+.error-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  color: #b91c1c;
+  margin-bottom: 8px;
+}
+
+.error-tag {
+  background: #fee2e2;
+  color: #b91c1c;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+}
+
+.error-output {
+  background: #020617;
+  color: #fca5a5;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+/* ================= MOBILE & TABLET RESPONSIVE ================= */
+
+/* ---------- TABLET (<= 1024px) ---------- */
+@media (max-width: 1024px) {
+  .solve-layout {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .solve-left,
+  .solve-right {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .solve-left {
+    border-right: none;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  .question-panel {
+    padding: 24px;
+    max-height: none;
+  }
+
+  .solve-right {
+    height: 70vh;
+  }
+}
+
+/* ---------- MOBILE (<= 768px) ---------- */
+@media (max-width: 768px) {
+  .compiler-root {
+    background: #f8fafc;
+  }
+
+  /* Stack layout */
+  .solve-layout {
+    flex-direction: column;
+  }
+
+  /* QUESTION PANEL */
+  .question-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .question-header h1 {
+    font-size: 20px;
+  }
+
+  .difficulty {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  .question-description {
+    font-size: 14px;
+  }
+
+  /* SAMPLE TESTCASES */
+  .sample-card {
+    padding: 12px;
+  }
+
+  .sample-row pre {
+    font-size: 12px;
+  }
+
+  /* EDITOR */
+  .solve-right {
+    height: 65vh;
+  }
+
+  .editor-top-bar {
+    padding: 10px;
+  }
+
+  .language-selector select {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  /* ACTION BAR */
+  .action-bar {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .action-bar button {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  /* RESULT SUMMARY */
+  .result-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .summary-verdict {
+    font-size: 14px;
+  }
+
+  .summary-count {
+    font-size: 13px;
+  }
+
+  .summary-tag {
+    align-self: flex-start;
+  }
+}
+
+/* ---------- SMALL MOBILE (<= 480px) ---------- */
+@media (max-width: 480px) {
+  .question-panel {
+    padding: 18px;
+  }
+
+  .question-header h1 {
+    font-size: 18px;
+  }
+
+  .section-heading {
+    font-size: 15px;
+  }
+
+  .sample-title {
+    font-size: 14px;
+  }
+
+  /* TESTCASE DETAILS */
+  .tc-header {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .tc-row pre {
+    font-size: 12px;
+  }
+
+  /* ERROR CARD */
+  .error-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .error-output {
+    font-size: 12px;
+  }
+}

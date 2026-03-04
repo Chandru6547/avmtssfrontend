@@ -1,0 +1,280 @@
+/* PAGE WRAPPER */
+.category-page {
+  padding: 40px;
+  margin-left: 80px; /* aligns with sidebar */
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f7f9fc, #eef2f7);
+}
+
+/* HEADER */
+.category-header {
+  margin-bottom: 30px;
+}
+
+.category-header h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.category-header p {
+  margin-top: 6px;
+  color: #6b7280;
+}
+
+/* GRID */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* CARD */
+.category-card {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.category-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* TITLE */
+.category-card h3 {
+  font-size: 19px;
+  font-weight: 500;
+  color: #111827;
+  margin-bottom: 18px;
+}
+
+/* BUTTON */
+.category-btn {
+  align-self: flex-start;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.35);
+}
+
+.category-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===================== */
+/* DIALOG / MODAL STYLES */
+/* ===================== */
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.dialog-box {
+  background: #ffffff;
+  width: 360px;
+  padding: 26px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.2);
+  animation: dialogPop 0.2s ease-out;
+}
+
+.dialog-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111827;
+}
+
+.dialog-box p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.dialog-cancel {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.dialog-confirm {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+@keyframes dialogPop {
+  from {
+    transform: scale(0.92);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* HEADER LAYOUT */
+.category-header {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ADD CATEGORY BUTTON */
+.add-category-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: #ffffff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-category-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+}
+
+/* INPUT IN DIALOG */
+.dialog-input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+}
+
+/* ================= MOBILE & TABLET RESPONSIVE ================= */
+
+/* ---------- TABLET (<= 1024px) ---------- */
+@media (max-width: 1024px) {
+  .category-page {
+    margin-left: 0; /* remove sidebar gap */
+    padding: 30px 24px;
+  }
+
+  .category-header h2 {
+    font-size: 24px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+/* ---------- MOBILE (<= 768px) ---------- */
+@media (max-width: 768px) {
+  .category-page {
+    padding: 24px 16px;
+  }
+
+  /* Header stacks vertically */
+  .category-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .category-header h2 {
+    font-size: 22px;
+  }
+
+  .category-header p {
+    font-size: 14px;
+  }
+
+  /* Full-width add button */
+  .add-category-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  /* One-column cards */
+  .category-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .category-card {
+    padding: 20px;
+  }
+
+  .category-card h3 {
+    font-size: 18px;
+  }
+
+  /* Button becomes full-width */
+  .category-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    align-self: stretch;
+    text-align: center;
+  }
+}
+
+/* ---------- SMALL MOBILE (<= 480px) ---------- */
+@media (max-width: 480px) {
+  .category-header h2 {
+    font-size: 20px;
+  }
+
+  /* Dialog full-width */
+  .dialog-box {
+    width: 92%;
+    padding: 20px;
+  }
+
+  .dialog-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .dialog-cancel,
+  .dialog-confirm {
+    width: 100%;
+    padding: 12px;
+  }
+}

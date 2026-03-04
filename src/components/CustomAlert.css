@@ -1,0 +1,81 @@
+.custom-alert-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.custom-alert-box {
+  width: 360px;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
+  animation: popIn 0.25s ease-out;
+}
+
+.custom-alert-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.custom-alert-box.success .custom-alert-icon {
+  color: #22c55e;
+}
+
+.custom-alert-box.warning .custom-alert-icon {
+  color: #f59e0b;
+}
+
+.custom-alert-box.error .custom-alert-icon {
+  color: #ef4444;
+}
+
+.custom-alert-box.info .custom-alert-icon {
+  color: #3b82f6;
+}
+
+.custom-alert-box h3 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.custom-alert-box p {
+  font-size: 14px;
+  color: #475569;
+  margin-bottom: 20px;
+}
+
+.custom-alert-btn {
+  padding: 10px 24px;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.2s ease;
+}
+
+.custom-alert-btn:hover {
+  background: #1e40af;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,165 @@
+/* ================= LAYOUT ================= */
+
+.task-charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 22px;
+  margin-bottom: 36px;
+}
+
+/* ================= CARD ================= */
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  transition: all 0.25s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+}
+
+.chart-card h4 {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #111827;
+}
+
+/* ================= PIE ================= */
+
+.pie-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 0 auto;
+}
+
+.pie-chart {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  animation: pieGrow 0.9s ease forwards;
+}
+
+@keyframes pieGrow {
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.pie-center {
+  position: absolute;
+  inset: 0;
+  width: 110px;
+  height: 110px;
+  margin: auto;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: inset 0 0 0 1px #e5e7eb;
+}
+
+.pie-center b {
+  font-size: 20px;
+  font-weight: 900;
+  color: #22c55e;
+}
+
+.pie-center span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+/* ================= LEGEND ================= */
+
+.legend {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 18px;
+  font-size: 13px;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #374151;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.green { background: #22c55e; }
+.dot.blue { background: #3b82f6; }
+.dot.gray { background: #e5e7eb; }
+
+/* ================= STATUS COUNT ================= */
+
+.status-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.status-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 40px;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.status-row:hover {
+  transform: translateX(4px);
+}
+
+.status-row span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+}
+
+.status-row b {
+  font-size: 15px;
+  font-weight: 800;
+  text-align: right;
+}
+
+.status-bar {
+  height: 10px;
+  background: #f3f4f6;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.status-bar .fill {
+  height: 100%;
+  border-radius: 999px;
+  animation: growWidth 0.8s ease forwards;
+}
+
+@keyframes growWidth {
+  from { width: 0; }
+}
+
+.status-row.green .fill { background: #22c55e; }
+.status-row.blue .fill { background: #3b82f6; }
+.status-row.gray .fill { background: #e5e7eb; }

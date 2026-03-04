@@ -1,0 +1,138 @@
+.navbar {
+  width: 56px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: width 0.3s ease;
+  z-index: 100;
+  overflow-x: hidden; /* 🔥 IMPORTANT */
+}
+
+.navbar:hover {
+  width: 240px;
+}
+/* HEADER */
+.navbar-header {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 18px;
+  font-weight: bold;
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo-text {
+  opacity: 0;
+  white-space: nowrap;
+  color: white;
+  transition: opacity 0.2s ease;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.navbar:hover .logo-text {
+  opacity: 1;
+}
+
+/* MENU */
+.navbar-menu {
+  flex: 1;
+  padding-top: 10px;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 18px;
+  color: #cbd5f5;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 4px 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-item span {
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.navbar:hover .nav-item span {
+  opacity: 1;
+}
+
+.nav-item:hover {
+  background: #1e293b;
+  color: white;
+}
+
+/* FOOTER */
+.navbar-footer {
+  padding-bottom: 10px;
+}
+
+.logout {
+  background: none;
+  border: none;
+  width: 93%;
+  text-align: left;
+  color: #fecaca;
+  cursor: pointer;
+}
+
+.logout:hover {
+  background: #7f1d1d;
+  color: white;
+}
+
+/* SECTION GROUPING */
+.nav-section {
+  margin-bottom: 18px;
+}
+
+.nav-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748b;
+  padding: 6px 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* OPTIONAL: spacing improvement */
+.navbar-menu {
+  padding-top: 10px;
+}
+.navbar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px;
+}
+
+.navbar-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.logo-title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo-sub {
+  font-size: 12px;
+  opacity: 0.8;
+}

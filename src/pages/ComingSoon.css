@@ -1,0 +1,46 @@
+.coming-soon-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+.coming-soon-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  padding: 50px 60px;
+  border-radius: 16px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  animation: float 3s ease-in-out infinite;
+}
+
+.rocket-icon {
+  font-size: 64px;
+  color: #ffcc00;
+  margin-bottom: 20px;
+}
+
+.coming-soon-card h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.coming-soon-card p {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
