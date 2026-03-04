@@ -109,7 +109,7 @@ export default function CompilerPage() {
 
     try {
       const res = await fetch(
-        `https://tssplatform.onrender.com${endpoint}`,
+        `https://avmtssbackend.onrender.com${endpoint}`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },

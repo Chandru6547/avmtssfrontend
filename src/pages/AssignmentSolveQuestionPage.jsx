@@ -123,7 +123,7 @@ useEffect(() => {
 
     try {
       const res = await fetch(
-        "https://tssplatform.onrender.com/run",
+        "https://avmtssbackend.onrender.com/run",
         {
           method: "POST",
           headers: {
@@ -192,7 +192,7 @@ useEffect(() => {
 
     try {
       const res = await fetch(
-        "https://tssplatform.onrender.com/run",
+        "https://avmtssbackend.onrender.com/run",
         {
           method: "POST",
           headers: {

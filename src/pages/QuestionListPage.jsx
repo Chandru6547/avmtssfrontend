@@ -20,7 +20,7 @@ export default function QuestionListPage() {
 
       try {
         const res = await fetch(
-          `https://tssplatform.onrender.com/questions?categoryId=${categoryId}`,
+          `https://avmtssbackend.onrender.com/questions?categoryId=${categoryId}`,
           {
             headers: {
               Authorization: `Bearer ${getToken()}`
@@ -60,7 +60,7 @@ export default function QuestionListPage() {
       questions.map(async (q) => {
         try {
           const res = await fetch(
-            `https://tssplatform.onrender.com/api/submissions/solved?questionId=${q._id}`,
+            `https://avmtssbackend.onrender.com/api/submissions/solved?questionId=${q._id}`,
             {
               headers: {
                 Authorization: `Bearer ${getToken()}`

@@ -24,7 +24,7 @@ export default function CategoryListPage() {
 
     try {
       const res = await fetch(
-        `https://tssplatform.onrender.com/categories?courseId=${courseId}`,
+        `https://avmtssbackend.onrender.com/categories?courseId=${courseId}`,
         {
           headers: {
             Authorization: `Bearer ${getToken()}`
@@ -60,7 +60,7 @@ export default function CategoryListPage() {
     setLoading(true);
     try {
       const res = await fetch(
-        "https://tssplatform.onrender.com/categories",
+        "https://avmtssbackend.onrender.com/categories",
         {
           method: "POST",
           headers: {

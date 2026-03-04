@@ -22,7 +22,7 @@ export default function CourseListPage() {
 
     try {
       const res = await fetch(
-        "https://tssplatform.onrender.com/courses/student",
+        "https://avmtssbackend.onrender.com/courses/student",
         {
           method: "POST",
           headers: {
@@ -60,7 +60,7 @@ export default function CourseListPage() {
 
     setLoading(true);
     try {
-      const res = await fetch("https://tssplatform.onrender.com/courses", {
+      const res = await fetch("https://avmtssbackend.onrender.com/courses", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
