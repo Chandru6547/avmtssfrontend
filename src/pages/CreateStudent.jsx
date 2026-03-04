@@ -1,106 +1,111 @@
-import { useEffect, useState } from "react";
+import { useState, useRef } from "react";
 import * as XLSX from "xlsx";
 import "./CreateStudent.css";
 
 const API_BASE = process.env.REACT_APP_API_BASE_URL;
 
 export default function CreateStudent() {
-  const [campuses, setCampuses] = useState([]);
-  const [years, setYears] = useState([]);
-  const [batches, setBatches] = useState([]);
 
-  const [campus, setCampus] = useState("");
-  const [year, setYear] = useState("");
-  const [batch, setBatch] = useState("");
+  const fileInputRef = useRef(null);
 
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [preview, setPreview] = useState([]);
 
-  /* ---------------- FETCH CAMPUSES ---------------- */
-  useEffect(() => {
-    fetch(`${API_BASE}/campus/get`)
-      .then(res => res.json())
-      .then(setCampuses);
-  }, []);
+  /* ---------------- FILE SELECT ---------------- */
 
-  /* ---------------- FETCH YEARS ---------------- */
-  useEffect(() => {
-    if (!campus) return;
+  const handleFileChange = (e) => {
 
-    fetch(`${API_BASE}/year/get-by-campus?campus=${encodeURIComponent(campus)}`)
-      .then(res => res.json())
-      .then(data => {
-        setYears(data);
-        setBatches([]);
-        setYear("");
-        setBatch("");
-      });
-  }, [campus]);
+    const selectedFile = e.target.files[0];
 
-  /* ---------------- FETCH BATCHES ---------------- */
-  useEffect(() => {
-    if (!campus || !year) return;
+    if (!selectedFile) return;
 
-    fetch(
-      `${API_BASE}/batch/get-by-campus-year?campus=${encodeURIComponent(
-        campus
-      )}&year=${year}`
-    )
-      .then(res => res.json())
-      .then(data => {
-        setBatches(data);
-        setBatch("");
-      });
-  }, [campus, year]);
+    if (!selectedFile.name.match(/\.(xlsx|csv)$/)) {
+      setMessage("Please upload a valid Excel or CSV file.");
+      return;
+    }
 
-  /* ---------------- SUBMIT BULK STUDENTS ---------------- */
+    setFile(selectedFile);
+    setMessage("");
+
+    const reader = new FileReader();
+
+    reader.onload = (event) => {
+
+      const data = new Uint8Array(event.target.result);
+      const workbook = XLSX.read(data, { type: "array" });
+
+      const sheet = workbook.Sheets[workbook.SheetNames[0]];
+      const rows = XLSX.utils.sheet_to_json(sheet);
+
+      setPreview(rows.slice(0, 5));
+
+    };
+
+    reader.readAsArrayBuffer(selectedFile);
+  };
+
+  /* ---------------- UPLOAD STUDENTS ---------------- */
+
   const handleSubmit = async () => {
+
     if (!file) {
-      setMessage("❌ Please upload an Excel file");
+      fileInputRef.current.click();
+      setMessage("Please select a file before uploading.");
       return;
     }
 
     setLoading(true);
-    setMessage("Uploading students...");
+    setMessage("Uploading student records...");
 
     const reader = new FileReader();
 
     reader.onload = async (e) => {
-      const data = new Uint8Array(e.target.result);
-      const workbook = XLSX.read(data, { type: "array" });
-      const sheet = workbook.Sheets[workbook.SheetNames[0]];
-      const rows = XLSX.utils.sheet_to_json(sheet);
 
-      for (const row of rows) {
-        if (!row.email || !row.password) continue;
+      try {
 
-        const payload = {
-          name: row.name || "",
-          email: row.email,
-          password: row.password,
-          regNo: row.regNo || "",
-          phNo: row.phNo || "",
-          college: campus,
-          year: Number(year),
-          batch: batch,
-          role: "student",
-          course: [],
-          mcqs: []
-        };
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, { type: "array" });
 
-        try {
-          await fetch(`${API_BASE}/api/auth/register`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload)
-          });
-        } catch {}
+        const sheet = workbook.Sheets[workbook.SheetNames[0]];
+        const rows = XLSX.utils.sheet_to_json(sheet);
+
+        if (!rows.length) {
+          setMessage("Excel file is empty.");
+          setLoading(false);
+          return;
+        }
+
+        const res = await fetch(`${API_BASE}/bulkCreateStudentsWithMails`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(rows)
+        });
+
+        const responseData = await res.json();
+
+        if (res.ok) {
+          setMessage(`${rows.length} student records uploaded successfully.`);
+        } else {
+          setMessage(responseData.message || "Upload failed.");
+        }
+
+      } catch (err) {
+        console.error(err);
+        setMessage("Server error occurred during upload.");
       }
 
-      setMessage("✅ Students uploaded successfully");
       setLoading(false);
       setFile(null);
+      setPreview([]);
+
+      if (fileInputRef.current) {
+        fileInputRef.current.value = "";
+      }
+
     };
 
     reader.readAsArrayBuffer(file);
@@ -108,51 +113,87 @@ export default function CreateStudent() {
 
   return (
     <div className="student-container">
+
       <h2>Bulk Student Upload</h2>
 
-      {/* ---------- SELECTION SECTION ---------- */}
-      <div className="student-form">
-        <select value={campus} onChange={e => setCampus(e.target.value)} required>
-          <option value="">Select College</option>
-          {campuses.map(c => (
-            <option key={c._id} value={c.college || c.name}>
-              {c.Campusname || c.college}
-            </option>
-          ))}
-        </select>
+      <div className="upload-box">
 
-        <select value={year} onChange={e => setYear(e.target.value)} disabled={!campus}>
-          <option value="">Select Year</option>
-          {years.map(y => (
-            <option key={y._id} value={y.Year || y.year}>
-              {y.Year || y.year}
-            </option>
-          ))}
-        </select>
-
-        <select value={batch} onChange={e => setBatch(e.target.value)} disabled={!year}>
-          <option value="">Select Batch</option>
-          {batches.map(b => (
-            <option key={b._id} value={b.Batchname || b.batch}>
-              {b.Batchname || b.batch}
-            </option>
-          ))}
-        </select>
-
-        {/* ---------- FILE UPLOAD ---------- */}
         <input
+          ref={fileInputRef}
           type="file"
           accept=".xlsx,.csv"
-          disabled={!campus || !year || !batch}
-          onChange={(e) => setFile(e.target.files[0])}
+          onChange={handleFileChange}
         />
 
-        <button disabled={loading || !file} onClick={handleSubmit}>
-          {loading ? "Uploading..." : "Submit Students"}
+        <button
+          onClick={handleSubmit}
+          disabled={loading}
+        >
+          {loading ? "Uploading..." : "Upload Students"}
         </button>
+
       </div>
 
-      {message && <p className="message">{message}</p>}
+      {preview.length > 0 && (
+
+        <div className="preview-table">
+
+          <h3>Preview (First 5 Records)</h3>
+
+          <table>
+
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>College</th>
+                <th>Year</th>
+                <th>Batch</th>
+                <th>Registration No</th>
+                <th>Phone</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              {preview.map((row, index) => (
+
+                <tr key={index}>
+                  <td>{row.name}</td>
+                  <td>{row.email}</td>
+                  <td>{row.college}</td>
+                  <td>{row.year}</td>
+                  <td>{row.batch}</td>
+                  <td>{row.regNo}</td>
+                  <td>{row.phNo}</td>
+                </tr>
+
+              ))}
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+      )}
+
+      {message && (
+        <p className="message">{message}</p>
+      )}
+
+      <div className="excel-format">
+
+        <h4>Excel File Format</h4>
+
+        <p>The Excel file must contain the following columns:</p>
+
+        <code>
+          name | email | college | year | batch | regNo | phNo
+        </code>
+
+      </div>
+
     </div>
   );
 }
